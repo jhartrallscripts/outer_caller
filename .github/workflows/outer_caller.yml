@@ -10,4 +10,4 @@ jobs:
             runner_type: ${{ matrix.runner_type }}
         strategy:
             matrix:
-                runner_type: [ubuntu-latest, ubuntu-20.04, ubuntu-18.04]
+                runner_type: [ubuntu-latest, ubuntu-20.04, ubuntu-22.04]
