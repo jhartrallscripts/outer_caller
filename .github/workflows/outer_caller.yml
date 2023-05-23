@@ -1,7 +1,9 @@
 name: Ubuntu Caller Workflow
 
 on:
-    workflow_dispatch
+    push:
+        branches:
+            - main
 
 jobs:
     call_reusable_workflow:
@@ -11,3 +13,10 @@ jobs:
         strategy:
             matrix:
                 runner_type: [ubuntu-latest, ubuntu-20.04, ubuntu-22.04]
+                include:
+                    - runner_type: ubuntu-latest
+                      runner_label: ubuntu-latest-and-greatest
+                    - runner_type: ubuntu-20.04
+                      runner_label: ubuntu-20.04-stable
+                    - runner_type: ubuntu-22.04
+                      runner_label: ubuntu-22.04-bleeding-edge
