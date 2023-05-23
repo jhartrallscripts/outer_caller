@@ -5,6 +5,10 @@ on:
 
 jobs:
     call_reusable_workflow:
-        uses: jhartrallscripts/many_runners/.github/workflows/reusable_workflow.yml@main
-        with:
-            runner_type: ubuntu-latest
+        strategy:
+            matrix:
+                runner_type: [ubuntu-latest, ubuntu-20.04, ubuntu-18.04]
+        steps:
+            - uses: jhartrallscripts/many_runners/.github/workflows/reusable_workflow.yml@main
+              with:
+                runs-on: ${{ matrix.runner_type }}
