@@ -10,6 +10,7 @@ jobs:
         uses: jhartrallscripts/many_runners/.github/workflows/reusable_workflow.yml@main
         with:
             runner_type: ${{ matrix.runner_type }}
+            runner_label: ${{ matrix.runner_label }}
         strategy:
             matrix:
                 runner_type: [ubuntu-latest, ubuntu-20.04, ubuntu-22.04]
