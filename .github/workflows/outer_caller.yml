@@ -21,5 +21,7 @@ jobs:
                       runner_label: ubuntu-20.04-stable
                     - runner_type: ubuntu-22.04
                       runner_label: ubuntu-22.04-bleeding-edge
+                    - runner_type: mac-os
+                      runner_label: wozniak_machine
                       
                       # this is a comment
